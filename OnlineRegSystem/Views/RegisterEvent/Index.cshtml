@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@model OnlineRegSystem.Models.Register
+
+<div class="col-6">
+    <h1>Register for Event</h1>
+
+    @using (Html.BeginForm("Index", "RegisterEvent/Reg", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+        <p>@Html.LabelFor(model => model.EventName, "Event Name: ")</p>
+        <div style="COLOR: blue; width: 200px">
+            @Html.DropDownList("EventName", null, string.Empty, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.EventName, "", new { @class = "text-danger" })
+        </div>
+
+        <p>@Html.LabelFor(model => model.GuestNumber, "Guest Number: ")</p>
+        <div style="COLOR: blue; width: 200px">
+            @Html.TextBoxFor(model => model.GuestNumber, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.GuestNumber, "", new { @class = "text-danger" }) <br />
+        </div>
+
+        <p>@Html.LabelFor(model => model.PaymentAmount, "Amount of Payment: ")</p>
+        <div style="COLOR: blue; width: 200px">
+            @Html.TextBoxFor(model => model.PaymentAmount, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.PaymentAmount, "", new { @class = "text-danger" }) <br />
+        </div>
+
+        <p>@Html.LabelFor(model => model.Email, "Email: ")</p>
+        <div style="COLOR: blue; width: 200px">
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" }) <br />
+        </div>
+
+        <div style=" width: 50px">
+            <button class="w3-button w3-red" type="Submit">Register</button> <br />
+        </div>
+    }
+</div>
+
+<div class="col-6">
+    <h1>Client Details</h1>
+    <p>Details changed recently change them here so we can maintain your latest details </p>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

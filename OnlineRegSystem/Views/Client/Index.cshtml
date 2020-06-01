@@ -1,0 +1,59 @@
+﻿@model OnlineRegSystem.Models.Client
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="col-6">
+    @using (Html.BeginForm("Reg", "Client", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+        <h1>Client Registration Form</h1>
+
+        <p>@Html.LabelFor(model => model.FullName, "Name: ")</p>
+        <div style="COLOR: blue; width: 200px">
+            @Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+        </div>
+
+        <p>@Html.LabelFor(model => model.Age, "Age: ")</p>
+        <div style="COLOR: blue; width: 200px">
+            @Html.TextBoxFor(model => model.Age, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+        </div>
+
+        <p>@Html.LabelFor(model => model.Email, "Email: ")</p>
+        <div style="COLOR: blue; width: 200px">
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <p>@Html.LabelFor(model => model.Address, "Address: ")</p>
+        <div style="COLOR: blue; width: 200px">
+            @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+        </div>
+
+        <p>@Html.LabelFor(model => model.Phone, "Phone: ")</p>
+        <div style="COLOR: blue; width: 200px">
+            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" }) <br />
+        </div>
+
+        <div style=" width: 50px">
+            <button class="w3-button w3-red" type="Submit">Submit</button> <br />
+        </div>
+    }
+</div>
+
+<div class="col-6">
+    <h1>Online Event Registration System</h1>
+    <p>Register your details with us to begin registering for the many events on offer</p>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@model OnlineRegSystem.Models.Event
+
+@using (Html.BeginForm("Index", "SearchEvent/Search", FormMethod.Post))
+{
+    <div class="col-3">
+        <h1>Find what events are going on</h1>
+        <p>Many events are currently planned register today.</p>
+    </div>
+
+    <div class="col-3">
+        <h1>Event Search</h1>
+
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+        @Html.Label("eventName", "Event Name: ") @Html.TextBox("eventName", "", new { @class = "form-control" })
+
+        <div style=" width: 50px">
+            <button class="w3-button w3-red" type="Submit">Submit</button> <br />
+        </div>
+    </div>
+
+    <div class="col-6">
+        <h1>Event Search by Date</h1>
+
+        <p> @Html.Label("date", "Event Date: ")</p> <br /> <br />
+        <input type="date" name="EventDate" style="COLOR: blue; width: 200px" />
+
+        <div style=" width: 50px">
+            <button class="w3-button w3-red" type="Submit">Submit</button> <br />
+        </div>
+    </div>
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

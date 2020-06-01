@@ -1,0 +1,42 @@
+﻿@model OnlineRegSystem.Models.Register
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <div>
+        <h4>Event Registration Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.EventName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EventName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GuestNumber)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.GuestNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PaymentAmount)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PaymentAmount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+        </dl>
+        <div style=" width: 200px">
+            <input class="w3-button w3-red" type='button' onclick='history.go(-1);' value='Go Back' />
+        </div>
+    </div>

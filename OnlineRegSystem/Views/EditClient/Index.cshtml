@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@model  OnlineRegSystem.Models.Client
+
+@using (Html.BeginForm("Index", "EditClient/Index", FormMethod.Get))
+{
+    <div class="col-3">
+        <div style="width: 300px">
+            <h1>Find Current Details</h1>
+            <h5>Search Your current details before editing to check what details are outdated or to view current details</h5>
+            @Html.Label("email", "Client Email: ") @Html.TextBox("email", "", new { @class = "form-control", required = "Required" })
+
+            <button class="w3-button w3-red" type="Submit">Submit</button> <br />
+        </div>
+    </div>
+}
+
+<div class="col-3">
+    <h4> Current Client Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Full Name: </label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            <label>Address: </label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            <label>Age: </label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            <label>Phone: </label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            <label>Email: </label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+</div>
+
+@using (Html.BeginForm("Index", "EditClient/Update", FormMethod.Post))
+{
+    <div class="col-6">
+        <h1>Edit Client</h1>
+        <h5>Search Your current details before you can edit</h5>
+        <div style="width: 300px">
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+            @Html.Label("email", "Original Email: ") @Html.TextBox("email", "", new { @class = "form-control", data_val = false, @readonly = "readonly" })
+
+            @Html.Label("address", "New Address: ") @Html.TextBox("address", "", new { @class = "form-control" })
+
+            @Html.Label("phone", "New Phone: ") @Html.TextBox("phone", "", new { @class = "form-control" })
+
+            <div style=" width: 50px">
+                <button class="w3-button w3-red" type="Submit">Submit</button> <br />
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

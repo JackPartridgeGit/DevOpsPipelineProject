@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Event Registration System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="w3-black">
+
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Image in top left corner -->
+        <img src="~/Content/Images/Logo.jpg" style="width:100%">
+        <a href="/Home/index" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="/Client/index" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-id-card w3-xxlarge"></i>
+            <p>CLIENT</p>
+        </a>
+        <a href="/RegisterEvent/index" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-calendar w3-xxlarge"></i>
+            <p>REGISTRATION EVENT</p>
+        </a>
+        <a href="/SearchEvent/index" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-search w3-xxlarge"></i>
+            <p>SEARCH EVENT</p>
+        </a>
+        <a href="/EditClient/index" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-address-book w3-xxlarge"></i>
+            <p>EDIT CLIENT</p>
+        </a>
+        <a href="/DeleteEvent/index" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-trash w3-xxlarge"></i>
+            <p>DELETE EVENT</p>
+        </a>
+    </nav>
+
+    <!-- Navbar on small screens -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="/Home/index" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+            <a href="/Client/index" class="w3-bar-item w3-button" style="width:25% !important">CLIENT</a>
+            <a href="/RegistrationEvent/index" class="w3-bar-item w3-button" style="width:25% !important">REGISTRATION EVENT</a>
+            <a href="/EditClient/index" class="w3-bar-item w3-button" style="width: 25% !important">SEARCH EVENT</a>
+            <a href="/DeleteEvent/index" class="w3-bar-item w3-button" style="width:25% !important">EDIT CLIENT</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo"><span class="w3-hide-small"></span> Online Registration System</h1>
+            <p>Concerts, Sporting events and everything in between .</p>
+        </header>
+
+        @RenderBody()
+    </div>
+
+    <div class="col-5">
+        <h1></h1>
+    </div>
+    <div>
+        <!-- Footer -->
+        <footer class="col-4">
+            <h6> Thanks for viewing my Online Registration Page 2020 Jack Partridge </h6>
+            <!-- End footer -->
+        </footer>
+    </div>
+    <div class="col-3">
+        <h1></h1>
+    </div>
+    <!-- END PAGE CONTENT -->
+</body>
+</html>
